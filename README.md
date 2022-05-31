@@ -25,11 +25,11 @@ Official repo at https://github.com/dwave-examples and https://github.com/dwave-
   ¤ Soft constraints (they should be met) - smaller lagrange
 - Chain strength - enforce that a string of qubits behave as one variable (can be visualised with dwave.inspector.show()) as every logical problem is embedded to (map onto) the topology of the QPU:
   ¤ Linear terms >> Nodes >> QUBITS 
-  ¤ Quadratic terms >> Edges >> COUPLERS
-  A small chain strength can cause broken chains : the chain of qubits behaving as one logical variables (so having all same values 0s or 1s) assume mix values, breaking the constraint
-  A large chain strenght can dominate the QUBO: bad solutions as it's difficult to find a minimum
+  ¤ Quadratic terms >> Edges >> COUPLERS.
+  A small chain strength can cause broken chains : the chain of qubits behaving as one logical variables (so having all same values 0s or 1s) assume mix values, breaking the constraint.
+  A large chain strenght can dominate the QUBO: bad solutions as it's difficult to find a minimum.
   
-+ in Discrete Quadratic Modelws (dqm):
+// in Discrete Quadratic Modelws (dqm):
 - max number of variables (default: 3000)
 - max number of cases per variable (default: 10000)
 - max quadratic bias (default: 3B)
