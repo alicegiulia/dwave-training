@@ -54,6 +54,9 @@ def define_cqm(stocks, num_stocks_to_buy, returns):
 
     # Add a constraint to choose exactly num_stocks_to_buy stocks
     cqm.add_constraint(sum(stocks) == num_stocks_to_buy, label='choose k stocks' )
+    
+    # Add a constraint that the cost of the purchased stocks is less than or equal to the budget
+    cqm.add_constraint(sum(stocks[i]*price[i] for i in range(len(stocks))) <= budget, label='budget_limitation')
 
     # Add an objective function maximize returns
     cqm.set_objective(sum(-returns[i]+ stocks[i] for i in range(len(stocks))))
